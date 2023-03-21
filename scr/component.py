@@ -30,11 +30,11 @@ class Standartindivid():
 
 
 class GreenEat():
-    def __init__(self):
+    def __init__(self, window):
         self.color = (0, 255, 0)
         self.size_object = 10
 
-        self.rect = pg.Rect(0, 0, 100, 100)
+        self.rect = pg.Rect(*window.get_rect().center, 100, 100)
         self.cord_x = new_random_coords(self.size_object)
         self.cord_y = new_random_coords(self.size_object)
 

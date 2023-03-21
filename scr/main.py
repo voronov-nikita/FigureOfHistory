@@ -3,6 +3,8 @@ from random import randint
 
 from component import Standartindivid, GreenEat
 
+pg.init()
+
 
 class OpenSpace():
     def __init__(self):
@@ -21,8 +23,8 @@ class Individ(Standartindivid):
         self.cord_y = randint(0, 500)
 
         self.life = True
-        self.rect = pg.Rect(*window.get_rect().center, 0, 0).inflate(
-            self.size_individ*20, self.size_individ*20)
+        self.rect = pg.Rect(self.cord_x, self.cord_y,
+                            self.cord_x + self.size_individ, self.cord_y + self.size_individ)
 
         self.color = (255, 0, 0)
         self.position = (self.cord_x,
@@ -64,9 +66,8 @@ hero = Individ(place.screen)
 amount_food = 50
 list_object_eat = []
 for i in range(amount_food):
-    eat = GreenEat()
+    eat = GreenEat(place.screen)
     list_object_eat.append(eat)
-
 
 while place.work:
     place.clock.tick(place.FPS)
@@ -84,10 +85,11 @@ while place.work:
            hero.size_individ,
            hero.size_individ)
 
-#   <------------- Обработать все изображения -------------->
+    #   <------------- Обработать все изображения -------------->
     hero.update_position(pos)
     place.screen.fill(place.background_colour)
     # отрисовка
+
     for elem in list_object_eat:
         elem.create_food(place.screen)
     hero.draw_hero(place.screen)
