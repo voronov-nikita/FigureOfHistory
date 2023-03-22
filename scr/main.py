@@ -14,6 +14,9 @@ class OpenSpace():
         self.clock = pg.time.Clock()
         self.work = True
 
+    def restart_screen(self):
+        pass
+
 
 class Individ(Standartindivid):
     def __init__(self, window):
@@ -23,8 +26,9 @@ class Individ(Standartindivid):
         self.cord_y = randint(0, 500)
 
         self.life = True
-        self.rect = pg.Rect(self.cord_x, self.cord_y,
-                            self.cord_x + self.size_individ, self.cord_y + self.size_individ)
+        
+        self.surface = pg.Surface((self.size_individ, self.size_individ))
+        self.rect = self.surface.get_rect()
 
         self.color = (255, 0, 0)
         self.position = (self.cord_x,
@@ -34,6 +38,10 @@ class Individ(Standartindivid):
 
     def draw_hero(self, screen):
         pg.draw.rect(screen, self.color, self.position)
+        self.surface.fill(self.color)
+        self.rect.x = self.cord_x
+        self.rect.y = self.cord_y
+        screen.blit(self.surface, self.rect)
 
     def update_position(self, new_pos: tuple):
         self.position = new_pos
@@ -54,9 +62,8 @@ def move_object_hero():
 
 def intersection_elems():
     for eats in list_object_eat:
-        if hero.rect.colliderect(eat.rect):
-            print("kill")
-
+        if hero.rect.colliderect(eats.rect):
+            eats.live = True
 
 pg.display.set_caption("Generation")
 place = OpenSpace()
@@ -89,10 +96,10 @@ while place.work:
     hero.update_position(pos)
     place.screen.fill(place.background_colour)
     # отрисовка
-
+    hero.draw_hero(place.screen)
     for elem in list_object_eat:
         elem.create_food(place.screen)
-    hero.draw_hero(place.screen)
+    
 
     pg.display.update()
 

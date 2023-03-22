@@ -58,7 +58,7 @@ while True:
     # Проверка столкновения квадратов
     if square_rect.colliderect(other_square_rect):
         # Если столкновение произошло, то удаляем первый квадрат
-        screen.fill((255, 255, 255), square_rect)
+        screen.fill((9, 9, 9), square_rect)
 
     # Обновление экрана
     pygame.display.update()
