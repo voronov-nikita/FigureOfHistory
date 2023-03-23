@@ -34,6 +34,7 @@ class GreenEat(pg.Rect):
         self.color = (0, 255, 0)
         self.size_object = 10
 
+        self.generation = True
         self.live = True
 
         self.cord_x = new_random_coords(self.size_object)

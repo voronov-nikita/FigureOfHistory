@@ -15,7 +15,8 @@ class OpenSpace():
         self.work = True
 
     def restart_screen(self):
-        pass
+        self.work = False
+        start()
 
 
 class Individ(Standartindivid):
@@ -47,60 +48,76 @@ class Individ(Standartindivid):
         self.position = new_pos
 
 
-def move_object_hero():
-    keys_button = pg.key.get_pressed()
-
-    if keys_button[pg.K_LEFT] and hero.move_left(hero.cord_x):
-        hero.cord_x -= 10
-    if keys_button[pg.K_RIGHT] and hero.move_right(hero.cord_x, hero.size_individ):
-        hero.cord_x += 10
-    if keys_button[pg.K_UP] and hero.move_up(hero.cord_y):
-        hero.cord_y -= 10
-    if keys_button[pg.K_DOWN] and hero.move_down(hero.cord_y, hero.size_individ):
-        hero.cord_y += 10
-
-
-def intersection_elems():
-    for eats in list_object_eat:
-        if hero.rect.colliderect(eats.rect):
-            eats.live = True
-
 pg.display.set_caption("Generation")
-place = OpenSpace()
-hero = Individ(place.screen)
 
-# создаем amount_eat экземпляров еды для индивидума
-amount_food = 50
-list_object_eat = []
-for i in range(amount_food):
-    eat = GreenEat(place.screen)
-    list_object_eat.append(eat)
 
-while place.work:
-    place.clock.tick(place.FPS)
+def start():
 
-    # проверка на закрытие экрана
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            place.work = False
-    # движение
-    move_object_hero()
-    intersection_elems()
+    def move_object_hero():
+        keys_button = pg.key.get_pressed()
 
-    pos = (hero.cord_x,
-           hero.cord_y,
-           hero.size_individ,
-           hero.size_individ)
+        if keys_button[pg.K_LEFT] and hero.move_left(hero.cord_x):
+            hero.cord_x -= 10
+        if keys_button[pg.K_RIGHT] and hero.move_right(hero.cord_x, hero.size_individ):
+            hero.cord_x += 10
+        if keys_button[pg.K_UP] and hero.move_up(hero.cord_y):
+            hero.cord_y -= 10
+        if keys_button[pg.K_DOWN] and hero.move_down(hero.cord_y, hero.size_individ):
+            hero.cord_y += 10
+        if keys_button[pg.K_r]:
+            place.restart_screen()
 
-    #   <------------- Обработать все изображения -------------->
-    hero.update_position(pos)
-    place.screen.fill(place.background_colour)
-    # отрисовка
-    hero.draw_hero(place.screen)
-    for elem in list_object_eat:
-        elem.create_food(place.screen)
-    
 
-    pg.display.update()
+    def intersection_elems():
+        for eats in list_object_eat:
+            if hero.rect.colliderect(eats.rect):
+                print("OK\n")
+                if eats.generation:
+                    eats.generation = False
+                else:
+                    eats.live = False
 
-pg.quit()
+
+    place = OpenSpace()
+    hero = Individ(place.screen)
+
+    # создаем amount_eat экземпляров еды для индивидума
+    amount_food = 50
+    list_object_eat = []
+    for i in range(amount_food):
+        eat = GreenEat(place.screen)
+        list_object_eat.append(eat)
+
+    while place.work:
+        place.clock.tick(place.FPS)
+
+        # проверка на закрытие экрана
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                place.work = False
+        # движение
+        move_object_hero()
+        intersection_elems()
+
+        pos = (hero.cord_x,
+            hero.cord_y,
+            hero.size_individ,
+            hero.size_individ)
+
+        #   <------------- Обработать все изображения -------------->
+        hero.update_position(pos)
+        place.screen.fill(place.background_colour)
+        # отрисовка
+        hero.draw_hero(place.screen)
+        for elem in list_object_eat:
+            elem.create_food(place.screen)
+        
+
+        pg.display.update()
+
+    pg.quit()
+
+
+
+if __name__=="__main__":
+    start()
