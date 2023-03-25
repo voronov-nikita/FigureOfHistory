@@ -31,6 +31,7 @@ class Standartindivid(pg.Rect):
 
 class GreenEat(pg.Rect):
     def __init__(self, window):
+        super().__init__(self)
         self.color = (0, 255, 0)
         self.size_object = 10
 
