@@ -14,19 +14,17 @@ class OpenSpace():
         self.clock = pg.time.Clock()
         self.work = True
 
-    def restart_screen(self):
-        self.work = False
-        start()
-
 
 class Individ(Standartindivid):
     def __init__(self, window):
         super().__init__(self)
         self.size_individ = 10
         self.speed = 10
+        self.point = -50
 
         self.cord_x = randint(0, 500)
         self.cord_y = randint(0, 500)
+        self.count_point = 0
 
         self.life = True
 
@@ -55,20 +53,27 @@ pg.display.set_caption("Generation")
 
 def start():
     def move_object_hero(list_cord: list, pos: tuple):
+        try:
+            elem = list_cord[hero.count_point]
 
-        for elem in list_cord:
-            while hero.cord_x-hero.size_individ//2 > elem[0]:
+            if hero.cord_x >= elem[0] and hero.move_left(hero.cord_x):
                 hero.cord_x -= hero.speed
-                update_image(pos)
-            while hero.cord_x-hero.size_individ//2 < elem[0]:
+            elif hero.cord_x <= elem[0] and hero.move_right(hero.cord_x, hero.size_individ):
                 hero.cord_x += hero.speed
-                update_image(pos)
-            while hero.cord_y-hero.size_individ//2 > elem[1]:
-                hero.cord_y += hero.speed
-                update_image(pos)
-            while hero.cord_y-hero.size_individ//2 < elem[1]:
+
+            if hero.cord_y >= elem[1] and hero.move_up(hero.cord_y):
                 hero.cord_y -= hero.speed
-                update_image(pos)
+            elif hero.cord_y <= elem[1] and hero.move_down(hero.cord_y, hero.size_individ):
+                hero.cord_y += hero.speed
+
+            if elem[0] in range(hero.cord_x-hero.size_individ-1, hero.cord_x+hero.size_individ+1) and elem[1] in range(hero.cord_y-hero.size_individ, hero.cord_y+hero.size_individ+1):
+                print("+", list_cord_eats)
+                hero.count_point += 1
+
+                print(hero.point)
+
+        except IndexError:
+            pass
 
     def intersection_elems():
         for eats in list_object_eat:
@@ -77,6 +82,7 @@ def start():
                     print("OK\n")
                     eats.generation = False
                 else:
+                    hero.point += 1
                     eats.live = False
 
     def update_image(pos):
@@ -89,18 +95,16 @@ def start():
 
         pg.display.update()
 
-    def sort_list(ls: list):
-        print(sorted(ls))
-
     place = OpenSpace()
     hero = Individ(place.screen)
 
     # создаем amount_eat экземпляров еды для индивидума
-    amount_food = 50
+    # для обозначения точного количесвта очков был взят параметр для противоположного от количества очков героя
+    amount_food = -hero.point
     list_object_eat = [GreenEat(place.screen) for _ in range(amount_food)]
 
     list_cord_eats = [(elem.cord_x, elem.cord_y) for elem in list_object_eat]
-    sort_list(list_cord_eats)
+    list_cord_eats = sorted(list_cord_eats)
     while place.work:
         place.clock.tick(place.FPS)
 
