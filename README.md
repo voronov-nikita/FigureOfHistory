@@ -2,7 +2,7 @@
 
 This is a simulation of evolution based on a genetic algorithm and pygame.
 
-![start image](https://i.ytimg.com/vi/9BajDA6ceTU/maxresdefault.jpg)
+<img src="https://i.ytimg.com/vi/9BajDA6ceTU/maxresdefault.jpg" width="400">
 
 ## Содержание
 1. [About](https://github.com/voronov-nikita/simulation-evolution#-about-) - основное (зачем, где что располагается)
@@ -27,7 +27,6 @@ This is a simulation of evolution based on a genetic algorithm and pygame.
 Для этого был добавлен новый цикл в программе, формирующий список кортежей, где значения кортежей - это координаты обьекта еды _(x, y)_. Далее использкется стандартная сортировка python через метод ```sorted()```. На выходе получаем осортированный список кортежей по первому значению <font color=#aabbff> т.е по координате __X__</font>.
 
     <img src="image/Снимок экрана 2023-03-27 222703.png" width="250">
-    Рисунок 1.
 
     <img src="image/screen_1_2.png" width="250">
 
