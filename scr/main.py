@@ -10,7 +10,7 @@ class OpenSpace():
     def __init__(self):
         self.background_colour = (255, 255, 255)
         self.screen = pg.display.set_mode((500, 500))
-        self.FPS = 30
+        self.FPS = 60
         self.clock = pg.time.Clock()
         self.work = True
 
