@@ -5,9 +5,9 @@ This is a simulation of evolution based on a genetic algorithm and pygame.
 ![start image](https://i.ytimg.com/vi/9BajDA6ceTU/maxresdefault.jpg)
 
 ## Содержание
-1. [About](README.md/#about) - основное (зачем, где что располагается)
-2. [Этапы](README.md/#этапы) - процесс разработки и выполненой работы.
-3. [Useful Links](/README.md/#useful-links) - полезные ссылки со статьями и используемыми сайтами.
+1. [About](https://github.com/voronov-nikita/simulation-evolution#-about-) - основное (зачем, где что располагается)
+2. [Этапы](https://github.com/voronov-nikita/simulation-evolution#-%D1%8D%D1%82%D0%B0%D0%BF%D1%8B-) - процесс разработки и выполненой работы.
+3. [Useful Links](https://github.com/voronov-nikita/simulation-evolution#-useful-links-) - полезные ссылки со статьями и используемыми сайтами.
 
 ## <u> **About** </u>
 Генетический алгоритм - это алгоритм оптимизации, представленный с помощью симуляции естественного отбора из реальной жизни. Данный алгоритм использует визуализированный пример естественного отбора.
@@ -30,7 +30,7 @@ This is a simulation of evolution based on a genetic algorithm and pygame.
     Рисунок 1.
 
     <img src="image/screen_1_2.png" width="250">
-    
+
     Рисунок 2 - синее это то, что обьект героя не сумел захватить (очки при этом начислились), а красным - то, что случается с игроком на большой скорости.
 
     Частично первую проблему удалось решить путем изменения параметра ```self.FPS``` в классе экрана, но это не сильно повлияло на окончательный результат.
