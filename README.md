@@ -42,4 +42,4 @@ This is a simulation of evolution based on a genetic algorithm and pygame.
 3. PyGame lessons - [youtube](https://youtube.com/playlist?list=PLA0M1Bcd0w8xg_hyqpPpHdbZnPubSyIQ_)
 
 -------------------
-###### 27.03.2023 - last README.
+###### 28.03.2023 - last README.
