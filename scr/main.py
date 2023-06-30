@@ -1,74 +1,107 @@
 import pygame as pg
-from random import randint
-
-from component import StandartIndivid, GreenEat
+import sys
 
 pg.init()
 
 
 class OpenSpace():
-    def __init__(self):
-        self.background_colour = (255, 255, 255)
-        self.screen = pg.display.set_mode((500, 500))
-        self.FPS = 60
+    def __init__(self, window_size:tuple=(500, 500), background_colour:tuple=(255, 255, 255), fps:int=60):
+        self.background_colour = background_colour
+        self.window_size = window_size
+        self.screen = pg.display.set_mode(self.window_size)
+        self.FPS = fps
         self.clock = pg.time.Clock()
         self.work = True
 
+    def draw_ground(self):
+        position = (
+            0, self.window_size[1]-self.window_size[1]*0.01, self.window_size[1], 5
+        )
+        pg.draw.rect(self.screen, (0,0,0), position)
 
-pg.display.set_caption("Generation")
+
+class Square():
+    def __init__(self, window_screen, size:int, color:tuple, cords:tuple=(0, 0)):
+        
+        self.size = size
+        self.color = color
+
+        self.screen = window_screen
+
+        # start cords
+        self.cord_x, self.cord_y = cords
+
+        self.drawing = True
+
+
+
+    def draw(self):
+        if self.drawing:
+            position = (
+                self.cord_x,
+                self.cord_y,
+                self.size,
+                self.size
+            )
+            pg.draw.rect(self.screen, self.color, position)
+
+
+    def move(self, speed:int, moving:str):
+
+        if moving not in ["U", "D", "R", "L"]:
+            print("\nError in name of moving. Use the ['U', 'D', 'R', 'L'].\n")
+            return
+
+        size = pg.display.get_window_size()
+
+        if moving == "U":
+            if self.cord_y > size[1]:
+                self.cord_y -= speed
+
+        elif moving == "D":
+            if self.cord_y + self.size * 1.19 < size[1]:
+                self.cord_y += speed
+
+        elif moving == "R":
+            if self.cord_x +self.size < size[0]:
+                self.cord_x += speed
+
+        elif moving == "L":
+            if self.cord_x > size[0]:
+                self.cord_x -= speed
 
 
 def start():
+    # Имя нашего окна
+    pg.display.set_caption("NEW")
 
-    def intersection_elems():
-        for eats in list_object_eat:
-            if hero.rect.colliderect(eats.rect):
-                if eats.generation:
-                    eats.generation = False
-                else:
-                    hero.point += 1
-                    eats.live = False
+    window = OpenSpace()
+    screen = window.screen
 
-    def update_image(pos):
-        hero.update_position(pos)
-        place.screen.fill(place.background_colour)
-        # отрисовка
-        hero.draw_hero(place.screen)
-        for elem in list_object_eat:
-            elem.create_food(place.screen)
+    square1 = Square(screen, size=30, color=(0, 0, 0))
+    square2 = Square(screen, size=30, color=(255, 0, 0))
 
-        pg.display.update()
+    while window.work:
+        # установка значения частоты обновления кадров
+        window.clock.tick(window.FPS)
 
-    place = OpenSpace()
-    hero = StandartIndivid()
-
-    # создаем amount_eat экземпляров еды для индивидума
-    # для обозначения точного количесвта очков был взят параметр для противоположного от количества очков героя
-    amount_food = 50
-    list_object_eat = [GreenEat(place.screen) for _ in range(amount_food)]
-
-    list_cord_eats = sorted([(elem.cord_x, elem.cord_y) for elem in list_object_eat])
-    while place.work:
-        place.clock.tick(place.FPS)
-
-        # проверка на закрытие экрана
+        # Обработка события выхода
         for event in pg.event.get():
             if event.type == pg.QUIT:
-                place.work = False
-        # движение
+                sys.exit()
 
-        pos = (hero.cord_x,
-               hero.cord_y,
-               hero.size_individ,
-               hero.size_individ)
-        hero.move_object_hero(list_cord_eats)
-        intersection_elems()
+        square1.move(15, "D")
+        square2.move(10, "D")
 
-        #   <------------- Обработать все изображения -------------->
-        update_image(pos)
 
+        # Обновление экрана
+        screen.fill(window.background_colour)
+        window.draw_ground()
+        square2.draw()
+        square1.draw()
+        pg.display.update()
     pg.quit()
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
     start()

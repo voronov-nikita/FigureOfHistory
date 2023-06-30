@@ -1,45 +1,19 @@
-# Simulation Evolution
+# Simulation
 
-This is a simulation of evolution based on a genetic algorithm and pygame.
 
-<img src="https://i.ytimg.com/vi/9BajDA6ceTU/maxresdefault.jpg" width="400">
+## **Content**
 
-## Содержание
-1. [About](https://github.com/voronov-nikita/simulation-evolution#-about-) - основное (зачем, где что располагается)
-2. [Этапы](https://github.com/voronov-nikita/simulation-evolution#-%D1%8D%D1%82%D0%B0%D0%BF%D1%8B-) - процесс разработки и выполненой работы.
-3. [Useful Links](https://github.com/voronov-nikita/simulation-evolution#-useful-links-) - полезные ссылки со статьями и используемыми сайтами.
+1. [About](/README.md#about)
+2. [Useful links](/README.md#useful-links)
+3. [More Information](/README.md#more-information)
 
-## <u> **About** </u>
-Генетический алгоритм - это алгоритм оптимизации, представленный с помощью симуляции естественного отбора из реальной жизни. Данный алгоритм использует визуализированный пример естественного отбора.
+## **About**
 
-В папке [scr](/scr/) находиться файл [main.py](/scr/main.py), в котором находится осоновной код программы.
+## **Useful Links**
+1. pygame - [pygame.org](https://pygame.org)
+2. python - [pytohn.org](https://python.rorg)
+3. 
 
-В папке [scr](/scr/) находиться файл [component.py](/scr/component.py), который хранит в себе основные компоненты, присущие всем повторяющимся элементам в программе.
+## **More information**
 
-В папке [image](/image/) находятся все скриншоты и изображения игры.
-
-## <u><b> Этапы </b></u>
-
-1. Этап создания движения персонажа и начальная отрисовка всех компонентов (поле, первый персонаж, еда).
-    > необходимо реализовать движение игрока без человеческого вмешательства.
-
-2. Создание механики движения персонажа самостоятельно. <br>
-Для этого был добавлен новый цикл в программе, формирующий список кортежей, где значения кортежей - это координаты обьекта еды _(x, y)_. Далее использкется стандартная сортировка python через метод ```sorted()```. На выходе получаем осортированный список кортежей по первому значению <font color=#aabbff> т.е по координате __X__</font>.
-
-    <img src="image/Снимок экрана 2023-03-27 222703.png" width="250">
-
-    <img src="image/screen_1_2.png" width="250">
-
-    Рисунок 2 - синее это то, что обьект героя не сумел захватить (очки при этом начислились), а красным - то, что случается с игроком на большой скорости.
-
-    Частично первую проблему удалось решить путем изменения параметра ```self.FPS``` в классе экрана, но это не сильно повлияло на окончательный результат.
-    
-    На данный момент персонаж двигается не совсем адаптивно, у него нет мутации, оптимального маршрута и т.д. К тому же, необходимо исправить неточность с тем, что персонаж как бы не подбирает еду, но очки все равно начисляются.
-
-## <u> **Useful Links** </u>
-1. Python - [python.org](https://python.org)
-2. PyGame - [pygame.org](https://www.pygame.org)
-3. PyGame lessons - [youtube](https://youtube.com/playlist?list=PLA0M1Bcd0w8xg_hyqpPpHdbZnPubSyIQ_)
-
--------------------
-###### 28.03.2023 - last README.
+###### 30.06.2023 - last README`s commit. 
