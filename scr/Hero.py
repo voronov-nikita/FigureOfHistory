@@ -1,42 +1,63 @@
 import pygame as pg
-import random
+import math
 
 
-LIST_COLORS:list[str] = ["red", "blue", "yellow", "white", "pink", "green"]
 
-
-class Object():
-    def __init__(self, window_screen, angle:int=1, size:int=5, speed:int=1):
-        
-        self.size = size
-        self.color = random.choice(LIST_COLORS)
-        self.angle = angle
-        self.screen = window_screen
+class Hero():
+    def __init__(self, start_cords:tuple, size:int, speed:int, color:tuple=(0, 0, 0)):
+        self.cord_x, self.cord_y = start_cords
+        self.size:int = size
+        self.color:tuple = color
         self.speed:int = speed
-        self.isRight:bool = True
-
-        # start cords
-        self.cord_x, self.cord_y = 250 ,250
-
-
-    def draw(self):
-        pg.draw.circle(self.screen.screen, self.color, (self.cord_x, self.cord_y), self.size)
-        
-        
-    def move_function(self, all_dot:int) -> int:
-        if self.angle % 2 == 0:
-            return self.screen.window_size[1] // 2 + self.cord_x * self.angle
-        return self.screen.window_size[1] // 2 - self.cord_x * (self.angle - 1)
     
+    def draw(self, screen):
+        pg.draw.circle(screen, self.color, (self.cord_x, self.cord_y), self.size)
     
-    def move(self, all_dot:int):
-        if self.isRight:
-            if self.cord_x >= self.screen.window_size[0] * 0.5:
-                self.isRight = False
-            self.cord_x += self.speed
-            self.cord_y = self.move_function(all_dot)
+
+    def move(self, direction:str, special_speed:int=-1):
+        res:str = direction.lower()
+        speed = (special_speed, self.speed)[special_speed==-1]
+        if res == "right":
+            self.cord_x += speed
+            
+        elif res == 'left':
+            self.cord_x -= speed
+            
+        elif res == "up":
+            self.cord_y -= speed
+            
+        elif res == "down":
+            self.cord_y += speed
+            
         else:
-            if self.cord_x <= self.screen.window_size[0] * 0.1:
-                self.isRight = True
-            self.cord_x -= self.speed
-            self.cord_y = self.move_function(all_dot)
+            print(
+                "Указывать можно только напривления:\nналево-'left'\nнаправо-'right'\nвниз-'down'\nвверх-'up'"
+                )
+            raise NameError
+
+
+class Window():
+    def __init__(self, win_name:str, win_size:tuple=(500, 500), background_color:tuple=(255, 255, 255)):
+        self.window_size:tuple = win_size
+        self.window_name:str = win_name
+        
+        self.bg_color:tuple = background_color
+        
+        self.screen = None
+        self.clock = pg.time.Clock()
+        self.FPS:int = 30
+        
+        self.run:bool = True
+        # generate main UI
+        self.initUI()
+        
+    def initUI(self):
+        self.screen = pg.display.set_mode(self.window_size)
+        # SET Name for window
+        pg.display.set_caption(self.window_name)
+        
+        
+    def draw_ground(self):
+        self.screen.fill(self.bg_color)
+        
+        
