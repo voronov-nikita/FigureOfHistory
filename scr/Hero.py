@@ -9,31 +9,25 @@ class Hero():
         self.size:int = size
         self.color:tuple = color
         self.speed:int = speed
+        
+        # testing
+        self.cord_y = 250
     
     def draw(self, screen):
         pg.draw.circle(screen, self.color, (self.cord_x, self.cord_y), self.size)
     
+    
+    def function_y(self):
+        return (math.cos(self.cord_x) * 10)
 
-    def move(self, direction:str, special_speed:int=-1):
-        res:str = direction.lower()
+
+    def move(self, count_point:int, special_speed:int=-1):
         speed = (special_speed, self.speed)[special_speed==-1]
-        if res == "right":
-            self.cord_x += speed
-            
-        elif res == 'left':
-            self.cord_x -= speed
-            
-        elif res == "up":
-            self.cord_y -= speed
-            
-        elif res == "down":
-            self.cord_y += speed
-            
-        else:
-            print(
-                "Указывать можно только напривления:\nналево-'left'\nнаправо-'right'\nвниз-'down'\nвверх-'up'"
-                )
-            raise NameError
+        angle:int = 360 // count_point
+        k = math.sin(angle) // math.cos(angle)
+        
+        self.cord_x += speed
+        self.cord_y = k * self.cord_x
 
 
 class Window():

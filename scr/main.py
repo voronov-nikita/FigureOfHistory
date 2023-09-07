@@ -7,7 +7,7 @@ pg.init()
 
 
 window = Window("NEW")
-hero = Hero((0, 0), 10, 2)
+list_hero = [Hero((0, 0), 10, 2) for _ in range(2)]
 
 while window.run:
     window.clock.tick(window.FPS)
@@ -15,11 +15,13 @@ while window.run:
         if event.type == pg.QUIT:
             window.run = False
     
-    hero.move('right')
+    for ind, hero in enumerate(list_hero):
+        hero.move(ind + 1)
     
     # drawing
     window.draw_ground()
-    hero.draw(window.screen)
+    for hero in list_hero:
+        hero.draw(window.screen)
     pg.display.update()
 
 pg.quit()
