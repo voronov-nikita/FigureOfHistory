@@ -1,20 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+//
+// Основной файл разработки и запуска приложения
+//
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import React from "react";
+
+// импорт отдельных модулей - страниц
+import { MaterialScreen } from "./src/pages/MaterialPage";
+import { AboutScreen } from "./src/pages/AboutPage";
+import { HomeScreen } from "./src/pages/HomePage";
+
+// конфигуратор навигации
+const Stack = createStackNavigator();
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	return (
+		<NavigationContainer>
+			<Stack.Navigator
+				initialRouteName="Home"
+				screenOptions={{
+					headerStyle: {
+						backgroundColor: "#ffffff",
+					},
+				}}
+			>
+
+				<Stack.Screen
+					name="Home"
+					component={HomeScreen}
+					options={{
+						headerShown: false,
+					}}
+				/>
+
+        <Stack.Screen
+					name="About"
+					component={AboutScreen}
+					options={{
+						headerShown: false,
+					}}
+				/>
+
+        <Stack.Screen
+					name="Material"
+					component={MaterialScreen}
+					options={{
+						headerShown: false,
+					}}
+				/>
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+}
