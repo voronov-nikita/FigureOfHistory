@@ -1,0 +1,32 @@
+{
+	"1": {
+		"title": "iPhone 15 Pro",
+		"image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009279096",
+		"short_description": "Титан. Чип A17 Pro. Динамический остров.",
+		"description": "iPhone 15 Pro — первый iPhone из титана. Чип A17 Pro открывает новые горизонты игр. Динамический остров и камера 48 Мп для потрясающих снимков.",
+		"any_image": [
+			"https://www.apple.com/v/iphone-15-pro/c/images/overview/design/titanium__bw94vj1xhk2a_large.jpg",
+			"https://www.apple.com/v/iphone-15-pro/c/images/overview/design/action-button__bpyyb9q0v4uq_large.jpg"
+		]
+	},
+	"2": {
+		"title": "MacBook Air M2",
+		"image": "https://www.apple.com/v/macbook-air/s/images/overview/design/color/design_side_midnight__flnancj2vlme_large.jpg",
+		"short_description": "Невероятно тонкий и мощный.",
+		"description": "MacBook Air с чипом M2 — это ультрапортативный ноутбук с высокой производительностью, дисплеем Liquid Retina и долгим сроком работы от батареи.",
+		"any_image": [
+			"https://www.apple.com/v/macbook-air/s/images/overview/design/design_side_profile__f0jz9x3rkuuq_large.jpg",
+			"https://www.apple.com/v/macbook-air/s/images/overview/design/design_keyboard__d2s9d6nreeq2_large.jpg"
+		]
+	},
+	"3": {
+		"title": "Apple Watch Ultra 2",
+		"image": "https://www.apple.com/v/apple-watch-ultra-2/a/images/overview/hero/hero__e6xcte5n6wuq_large.jpg",
+		"short_description": "Экстремальные приключения.",
+		"description": "Apple Watch Ultra 2 — самые прочные и функциональные часы Apple. С дисплеем Retina, улучшенным GPS и защитой от экстремальных условий.",
+		"any_image": [
+			"https://www.apple.com/v/apple-watch-ultra-2/a/images/overview/materials/titanium__bw94vj1xhk2a_large.jpg",
+			"https://www.apple.com/v/apple-watch-ultra-2/a/images/overview/health/health__d8yq2h5k4i2y_large.jpg"
+		]
+	}
+}
