@@ -1,32 +1,68 @@
 {
-	"1": {
-		"title": "iPhone 15 Pro",
-		"image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1693009279096",
-		"short_description": "Титан. Чип A17 Pro. Динамический остров.",
-		"description": "iPhone 15 Pro — первый iPhone из титана. Чип A17 Pro открывает новые горизонты игр. Динамический остров и камера 48 Мп для потрясающих снимков.",
-		"any_image": [
-			"https://www.apple.com/v/iphone-15-pro/c/images/overview/design/titanium__bw94vj1xhk2a_large.jpg",
-			"https://www.apple.com/v/iphone-15-pro/c/images/overview/design/action-button__bpyyb9q0v4uq_large.jpg"
-		]
-	},
-	"2": {
-		"title": "MacBook Air M2",
-		"image": "https://www.apple.com/v/macbook-air/s/images/overview/design/color/design_side_midnight__flnancj2vlme_large.jpg",
-		"short_description": "Невероятно тонкий и мощный.",
-		"description": "MacBook Air с чипом M2 — это ультрапортативный ноутбук с высокой производительностью, дисплеем Liquid Retina и долгим сроком работы от батареи.",
-		"any_image": [
-			"https://www.apple.com/v/macbook-air/s/images/overview/design/design_side_profile__f0jz9x3rkuuq_large.jpg",
-			"https://www.apple.com/v/macbook-air/s/images/overview/design/design_keyboard__d2s9d6nreeq2_large.jpg"
-		]
-	},
-	"3": {
-		"title": "Apple Watch Ultra 2",
-		"image": "https://www.apple.com/v/apple-watch-ultra-2/a/images/overview/hero/hero__e6xcte5n6wuq_large.jpg",
-		"short_description": "Экстремальные приключения.",
-		"description": "Apple Watch Ultra 2 — самые прочные и функциональные часы Apple. С дисплеем Retina, улучшенным GPS и защитой от экстремальных условий.",
-		"any_image": [
-			"https://www.apple.com/v/apple-watch-ultra-2/a/images/overview/materials/titanium__bw94vj1xhk2a_large.jpg",
-			"https://www.apple.com/v/apple-watch-ultra-2/a/images/overview/health/health__d8yq2h5k4i2y_large.jpg"
-		]
-	}
+    "products": [
+        {
+            "id": 1,
+            "title": "Смартфон Premium X",
+            "shortDescription": "Флагманский смартфон с AMOLED-экраном",
+            "longDescription": "Смартфон Premium X с 6.7-дюймовым AMOLED-экраном, процессором Snapdragon 888, 12 ГБ оперативной памяти и тройной камерой 108 МП. Поддержка 5G, аккумулятор 5000 мАч с быстрой зарядкой 65W.",
+            "mainImage": "https://example.com/images/phone1.jpg",
+            "additionalImages": [
+                "https://example.com/images/phone1_1.jpg",
+                "https://example.com/images/phone1_2.jpg"
+            ],
+            "price": 899.99
+        },
+        {
+            "id": 2,
+            "title": "Ноутбук UltraBook Pro",
+            "shortDescription": "Легкий и мощный ультрабук",
+            "longDescription": "Ноутбук UltraBook Pro с 14-дюймовым 4K экраном, процессором Intel Core i7 11-го поколения, 16 ГБ RAM и SSD на 1 ТБ. Вес всего 1.2 кг, время работы от батареи до 12 часов.",
+            "mainImage": "https://example.com/images/laptop1.jpg",
+            "additionalImages": ["https://example.com/images/laptop1_1.jpg"],
+            "price": 1299.99
+        },
+        {
+            "id": 3,
+            "title": "Беспроводные наушники SoundMax",
+            "shortDescription": "Наушники с шумоподавлением",
+            "longDescription": "Беспроводные наушники SoundMax с активным шумоподавлением, временем работы до 30 часов, поддержкой Bluetooth 5.2 и водонепроницаемостью IPX5. В комплекте чехол с беспроводной зарядкой.",
+            "mainImage": "https://example.com/images/headphones1.jpg",
+            "additionalImages": [
+                "https://example.com/images/headphones1_1.jpg",
+                "https://example.com/images/headphones1_2.jpg",
+                "https://example.com/images/headphones1_3.jpg"
+            ],
+            "price": 199.99
+        },
+        {
+            "id": 4,
+            "title": "Умные часы Fitness Pro",
+            "shortDescription": "Трекер активности и смарт-часы",
+            "longDescription": "Умные часы Fitness Pro с мониторингом сердечного ритма, SpO2, отслеживанием сна и более 20 спортивных режимов. Водонепроницаемость 5 ATM, время работы до 10 дней.",
+            "mainImage": "https://example.com/images/watch1.jpg",
+            "additionalImages": ["https://example.com/images/watch1_1.jpg"],
+            "price": 149.99
+        },
+        {
+            "id": 5,
+            "title": "Фотоаппарат MirrorShot Z",
+            "shortDescription": "Зеркальная камера для профессионалов",
+            "longDescription": "Фотоаппарат MirrorShot Z с полнокадровой матрицей 45 МП, 4K видео, 5-осевой стабилизацией и сенсорным экраном с переменным углом наклона. Совместимость с более чем 50 объективами.",
+            "mainImage": "https://example.com/images/camera1.jpg",
+            "additionalImages": [
+                "https://example.com/images/camera1_1.jpg",
+                "https://example.com/images/camera1_2.jpg"
+            ],
+            "price": 2499.99
+        },
+        {
+            "id": 6,
+            "title": "Игровая консоль NextGen X",
+            "shortDescription": "Мощная игровая консоль нового поколения",
+            "longDescription": "Игровая консоль NextGen X с 8-ядерным процессором, графикой 12 Терафлопс, SSD на 1 ТБ и поддержкой 4K 120FPS. В комплекте беспроводной геймпад с тактильной отдачей.",
+            "mainImage": "https://example.com/images/console1.jpg",
+            "additionalImages": ["https://example.com/images/console1_1.jpg"],
+            "price": 499.99
+        }
+    ]
 }
