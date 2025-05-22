@@ -10,7 +10,7 @@ const AppNavigator = () => {
             <Stack.Screen
                 name="Products"
                 component={ProductsListScreen}
-                options={{ title: 'Наши товары' }}
+                options={{ title: 'Карточки личностей' }}
             />
             <Stack.Screen
                 name="ProductDetail"

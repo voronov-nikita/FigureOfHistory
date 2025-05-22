@@ -2,15 +2,14 @@
     "products": [
         {
             "id": 1,
-            "title": "Смартфон Premium X",
+            "title": "Зоя Касьмеддвхилыу",
             "shortDescription": "Флагманский смартфон с AMOLED-экраном",
             "longDescription": "Смартфон Premium X с 6.7-дюймовым AMOLED-экраном, процессором Snapdragon 888, 12 ГБ оперативной памяти и тройной камерой 108 МП. Поддержка 5G, аккумулятор 5000 мАч с быстрой зарядкой 65W.",
-            "mainImage": "https://example.com/images/phone1.jpg",
+            "mainImage": "https://avatars.dzeninfra.ru/get-zen_doc/1640581/pub_64ff303bffabb222af829490_64ff3523765a2c10e40d6b7c/scale_1200",
             "additionalImages": [
                 "https://example.com/images/phone1_1.jpg",
                 "https://example.com/images/phone1_2.jpg"
-            ],
-            "price": 899.99
+            ]
         },
         {
             "id": 2,
@@ -18,8 +17,7 @@
             "shortDescription": "Легкий и мощный ультрабук",
             "longDescription": "Ноутбук UltraBook Pro с 14-дюймовым 4K экраном, процессором Intel Core i7 11-го поколения, 16 ГБ RAM и SSD на 1 ТБ. Вес всего 1.2 кг, время работы от батареи до 12 часов.",
             "mainImage": "https://example.com/images/laptop1.jpg",
-            "additionalImages": ["https://example.com/images/laptop1_1.jpg"],
-            "price": 1299.99
+            "additionalImages": ["https://example.com/images/laptop1_1.jpg"]
         },
         {
             "id": 3,
@@ -31,8 +29,7 @@
                 "https://example.com/images/headphones1_1.jpg",
                 "https://example.com/images/headphones1_2.jpg",
                 "https://example.com/images/headphones1_3.jpg"
-            ],
-            "price": 199.99
+            ]
         },
         {
             "id": 4,
@@ -40,8 +37,7 @@
             "shortDescription": "Трекер активности и смарт-часы",
             "longDescription": "Умные часы Fitness Pro с мониторингом сердечного ритма, SpO2, отслеживанием сна и более 20 спортивных режимов. Водонепроницаемость 5 ATM, время работы до 10 дней.",
             "mainImage": "https://example.com/images/watch1.jpg",
-            "additionalImages": ["https://example.com/images/watch1_1.jpg"],
-            "price": 149.99
+            "additionalImages": ["https://example.com/images/watch1_1.jpg"]
         },
         {
             "id": 5,
@@ -52,8 +48,7 @@
             "additionalImages": [
                 "https://example.com/images/camera1_1.jpg",
                 "https://example.com/images/camera1_2.jpg"
-            ],
-            "price": 2499.99
+            ]
         },
         {
             "id": 6,
@@ -61,8 +56,29 @@
             "shortDescription": "Мощная игровая консоль нового поколения",
             "longDescription": "Игровая консоль NextGen X с 8-ядерным процессором, графикой 12 Терафлопс, SSD на 1 ТБ и поддержкой 4K 120FPS. В комплекте беспроводной геймпад с тактильной отдачей.",
             "mainImage": "https://example.com/images/console1.jpg",
-            "additionalImages": ["https://example.com/images/console1_1.jpg"],
-            "price": 499.99
+            "additionalImages": ["https://example.com/images/console1_1.jpg"]
+        },
+        {
+            "id": 7,
+            "title": "Зоя Касьмеддвхилыу",
+            "shortDescription": "Флагманский смартфон с AMOLED-экраном",
+            "longDescription": "Смартфон Premium X с 6.7-дюймовым AMOLED-экраном, процессором Snapdragon 888, 12 ГБ оперативной памяти и тройной камерой 108 МП. Поддержка 5G, аккумулятор 5000 мАч с быстрой зарядкой 65W.",
+            "mainImage": "https://avatars.dzeninfra.ru/get-zen_doc/1640581/pub_64ff303bffabb222af829490_64ff3523765a2c10e40d6b7c/scale_1200",
+            "additionalImages": [
+                "https://example.com/images/phone1_1.jpg",
+                "https://example.com/images/phone1_2.jpg"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Зоя Касьмеддвхилыу",
+            "shortDescription": "Флагманский смартфон с AMOLED-экраном",
+            "longDescription": "Смартфон Premium X с 6.7-дюймовым AMOLED-экраном, процессором Snapdragon 888, 12 ГБ оперативной памяти и тройной камерой 108 МП. Поддержка 5G, аккумулятор 5000 мАч с быстрой зарядкой 65W.",
+            "mainImage": "https://avatars.dzeninfra.ru/get-zen_doc/1640581/pub_64ff303bffabb222af829490_64ff3523765a2c10e40d6b7c/scale_1200",
+            "additionalImages": [
+                "https://example.com/images/phone1_1.jpg",
+                "https://example.com/images/phone1_2.jpg"
+            ]
         }
     ]
 }

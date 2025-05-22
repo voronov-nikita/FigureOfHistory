@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 const ProductCard = ({ product, onPress }) => {
@@ -15,7 +14,6 @@ const ProductCard = ({ product, onPress }) => {
                 <Text style={styles.title} numberOfLines={1}>
                     {product.title}
                 </Text>
-                <Text style={styles.price}>${product.price.toFixed(2)}</Text>
                 <Text style={styles.description} numberOfLines={2}>
                     {product.shortDescription}
                 </Text>

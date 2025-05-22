@@ -40,7 +40,6 @@ const ProductDetailScreen = ({ route }) => {
 
             <View style={styles.details}>
                 <Text style={styles.title}>{product.title}</Text>
-                <Text style={styles.price}>${product.price.toFixed(2)}</Text>
                 <Text style={styles.description}>
                     {product.longDescription}
                 </Text>
